@@ -1,0 +1,18 @@
+{
+  "name": "nodeSerialportSMS",
+  "version": "0.0.1",
+  "description": "node Serialport SMS",
+  "dependencies": {
+    "http": "*",
+    "express": "*",
+    "fs": "*",
+    "multer": "*",
+    "body-parser": "*",
+    "Buffer": "*",
+    "cookie-parser": "*",
+    "crypto": "*",
+    "serialport": "*",
+    "iconv": "*",
+    "promise": "*"
+  }
+}
