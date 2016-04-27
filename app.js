@@ -13,14 +13,13 @@ serialPort.open(function (error) {
         console.log('open');
         
         var cbfunction=function(data,sim900) {
-            console.log(data,sim900);
             var id=data.match(/\+CMTI: \"SM\",(\d*)/);
             if (id) {
                 sim900.read(id[1]);
                 sim900.del(id[1]);
             }
 
-            var msg=data.match(/\+CMGR: \".*?\",\"(.*?).*?\n(.*?)\n\nOK\"/);
+            var msg=data.match(/\+CMGR: \".*?\",\"(.*?)\".*?\n(.*?)\n\nOK/m);
             if (msg) {
                 sim900.send(
                     sim900.usc22utf8(msg[1]),
